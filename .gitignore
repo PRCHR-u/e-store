@@ -1,0 +1,13 @@
+# Byte-code files
+    *.pyc
+    __pycache__/
+# IDE files
+    .idea/
+# Virtual environment
+    venv/
+    .env
+
+# Django specific
+    media/
+    static/
+    db.sqlite3
