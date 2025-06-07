@@ -1,13 +1,14 @@
 # Byte-code files
-    *.pyc
-    __pycache__/
-# IDE files
-    .idea/
-# Virtual environment
-    venv/
-    .env
+*.pyc
+__pycache__/
 
-# Django specific
-    media/
-    static/
-    db.sqlite3
+# IDE files
+.idea/
+
+# Virtual environment
+venv/
+.env
+db.sqlite3
+.idx/
+.vscode/
+devserver.sh
