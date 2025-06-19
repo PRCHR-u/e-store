@@ -15,3 +15,6 @@ devserver.sh
 
 # PostgreSQL installer
 postgresql-installer.exe
+
+# Media files
+media/
