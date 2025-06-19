@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% block title %}{{ product.name }} - Online Store{% endblock %}
+{% block content %}
+  <h1>{{ product.name }}</h1>
+  <p><strong>Категория:</strong> {{ product.category.name }}</p>
+  <p><strong>Описание:</strong> {{ product.description }}</p>
+  <p><strong>Цена:</strong> {{ product.price }} руб.</p>
+  {% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="max-width:400px;">
+  {% endif %}
+  <p><strong>Создан:</strong> {{ product.created_at|date:'d.m.Y H:i' }}</p>
+  <p><strong>Обновлён:</strong> {{ product.updated_at|date:'d.m.Y H:i' }}</p>
+  <a href="/">Назад к списку товаров</a>
+{% endblock %} 
