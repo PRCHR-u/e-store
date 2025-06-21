@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog', # Add your new app here
+    'blog',
 ]
 
 MIDDLEWARE = [
