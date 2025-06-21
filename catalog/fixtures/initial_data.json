@@ -1,0 +1,130 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Электроника",
+      "description": "Товары электронной техники и гаджеты",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Одежда",
+      "description": "Мужская и женская одежда, обувь, аксессуары",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Книги",
+      "description": "Художественная и техническая литература",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Спорт",
+      "description": "Спортивные товары, инвентарь и экипировка",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Дом и сад",
+      "description": "Товары для дома, сада и ремонта",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфон iPhone 15 Pro",
+      "description": "Новейший смартфон Apple с титановым корпусом и камерой 48 МП",
+      "image": "",
+      "category": 1,
+      "price": "99999.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Ноутбук Dell XPS 13",
+      "description": "Ультратонкий ноутбук с дисплеем InfinityEdge и процессором Intel Core i7",
+      "image": "",
+      "category": 1,
+      "price": "129999.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Футболка мужская хлопковая",
+      "description": "Комфортная хлопковая футболка для повседневной носки",
+      "image": "",
+      "category": 2,
+      "price": "1999.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Книга 'Война и мир' Л.Н. Толстой",
+      "description": "Великий роман-эпопея о русском обществе в эпоху наполеоновских войн",
+      "image": "",
+      "category": 3,
+      "price": "899.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Футбольный мяч Adidas Champions League",
+      "description": "Официальный мяч Лиги Чемпионов для профессиональной игры",
+      "image": "",
+      "category": 4,
+      "price": "3999.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Горшок для цветов керамический",
+      "description": "Красивый керамический горшок для комнатных растений",
+      "image": "",
+      "category": 5,
+      "price": "599.99",
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  }
+] 

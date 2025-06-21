@@ -1,0 +1,25 @@
+{% extends 'catalog/base.html' %}
+{% block title %}Главная - Online Store{% endblock %}
+{% block content %}
+<h1>Welcome to the Online Store</h1>
+<p>Browse our amazing selection of products!</p>
+<div class="row">
+    {% for product in products %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">
+                    <a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a>
+                </h5>
+                <p class="card-text">{{ product.description|truncatechars:100 }}</p>
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>Нет доступных товаров.</p>
+    {% endfor %}
+</div>
+{% endblock %}
