@@ -1,0 +1,10 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<h1>{% if form.instance.pk %}Редактировать{% else %}Создать{% endif %} запись</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'blog_list' %}">К списку</a>
+{% endblock %} 
