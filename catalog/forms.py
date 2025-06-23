@@ -28,13 +28,22 @@ class ProductForm(forms.ModelForm):
             else:
                 field.widget.attrs['class'] = 'form-control'
 
+    def clean_name(self):
+        name = self.cleaned_data.get('name', '')
+        forbidden = [w for w in FORBIDDEN_WORDS if w.lower() in name.lower()]
+        if forbidden:
+            raise forms.ValidationError(f"В названии обнаружены запрещённые слова: {', '.join(forbidden)}")
+        return name
+
+    def clean_description(self):
+        description = self.cleaned_data.get('description', '')
+        forbidden = [w for w in FORBIDDEN_WORDS if w.lower() in description.lower()]
+        if forbidden:
+            raise forms.ValidationError(f"В описании обнаружены запрещённые слова: {', '.join(forbidden)}")
+        return description
+
     def clean(self):
         cleaned_data = super().clean()
-        name = cleaned_data.get('name', '')
-        description = cleaned_data.get('description', '')
-        forbidden = [w for w in FORBIDDEN_WORDS if w.lower() in name.lower() or w.lower() in description.lower()]
-        if forbidden:
-            raise forms.ValidationError(f"Запрещённые слова обнаружены: {', '.join(forbidden)}")
         return cleaned_data
 
     def clean_price(self):
