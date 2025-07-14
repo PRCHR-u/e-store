@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+{% if post.preview %}
+    <img src="{{ post.preview.url }}" alt="Превью" style="max-width:300px;">
+{% endif %}
+<p>Дата создания: {{ post.created_at }}</p>
+<p>Просмотров: {{ post.views_count }}</p>
+<p>Статус: {% if post.is_published %}Опубликовано{% else %}Черновик{% endif %}</p>
+<a href="{% url 'blog_edit' post.pk %}">Редактировать</a> |
+<a href="{% url 'blog_delete' post.pk %}">Удалить</a> |
+<a href="{% url 'blog_list' %}">К списку</a>
+{% endblock %} 
