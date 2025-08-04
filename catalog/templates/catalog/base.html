@@ -11,7 +11,10 @@
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="mb-0">Online Store</h1>
             {% if not user.is_authenticated %}
-            <a href="/users/register/" class="btn btn-light">Регистрация</a>
+            <div class="d-flex gap-2">
+                <a href="{% url 'login' %}" class="btn btn-outline-light">Войти</a>
+                <a href="{% url 'register' %}" class="btn btn-light">Регистрация</a>
+            </div>
             {% endif %}
         </div>
     </header>
