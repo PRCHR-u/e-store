@@ -6,10 +6,31 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="/contacts/">Контакты</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Категории
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            {% for category in categories %}
+            <li>
+              <a class="dropdown-item d-flex justify-content-between align-items-center" href="{% url 'category_products' category_id=category.id %}">
+                {{ category.name }}
+                <span class="badge bg-primary rounded-pill">{{ category.products_count }}</span>
+              </a>
+            </li>
+            {% empty %}
+            <li><span class="dropdown-item text-muted">Категории не найдены</span></li>
+            {% endfor %}
+          </ul>
         </li>
-        <!-- Можно добавить другие пункты меню -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contacts' %}">Контакты</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'product_add' %}">Добавить товар</a>
+        </li>
+        {% endif %}
       </ul>
     </div>
   </div>
