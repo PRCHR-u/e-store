@@ -29,22 +29,11 @@ class HomeView(ListView):
 class ContactsView(TemplateView):
     template_name = 'catalog/contacts.html'
 
+@method_decorator(cache_page(60 * 15), name='dispatch')
 class ProductDetailView(DetailView):
     model = Product
     template_name = 'catalog/product_detail.html'
     context_object_name = 'product'
-
-    def get(self, request, *args, **kwargs):
-        # Кеширование на уровне представления
-        cache_key = f"product_detail_{self.kwargs.get('pk')}"
-        cached_response = cache.get(cache_key)
-        if cached_response is not None:
-            return cached_response
-        
-        response = super().get(request, *args, **kwargs)
-        # Кешируем на 15 минут
-        cache.set(cache_key, response, 60 * 15)
-        return response
 
 class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
